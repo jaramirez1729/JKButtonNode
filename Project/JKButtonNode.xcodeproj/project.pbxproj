@@ -1,0 +1,364 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4E4002F21D766ED2009BC88E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4002F11D766ED2009BC88E /* AppDelegate.swift */; };
+		4E4002F61D766ED2009BC88E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4002F51D766ED2009BC88E /* GameScene.swift */; };
+		4E4002F81D766ED2009BC88E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4002F71D766ED2009BC88E /* GameViewController.swift */; };
+		4E4002FB1D766ED2009BC88E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E4002F91D766ED2009BC88E /* Main.storyboard */; };
+		4E4002FD1D766ED2009BC88E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E4002FC1D766ED2009BC88E /* Assets.xcassets */; };
+		4E4003001D766ED2009BC88E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E4002FE1D766ED2009BC88E /* LaunchScreen.storyboard */; };
+		4E5F179F1D76BF9B0031FFC1 /* MusicButtonOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E5F179D1D76BF9B0031FFC1 /* MusicButtonOff.png */; };
+		4E5F17A01D76BF9B0031FFC1 /* MusicButtonOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E5F179E1D76BF9B0031FFC1 /* MusicButtonOn.png */; };
+		4EF2ECD21D768F840079A5F1 /* JKButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF2ECD11D768F840079A5F1 /* JKButtonNode.swift */; };
+		4EF2ECD61D769D420079A5F1 /* PlayButtonHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF2ECD41D769D420079A5F1 /* PlayButtonHighlighted.png */; };
+		4EF2ECD71D769D420079A5F1 /* PlayButtonNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF2ECD51D769D420079A5F1 /* PlayButtonNormal.png */; };
+		4EF2ECE01D76AE390079A5F1 /* ContinueButtonDisabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF2ECDF1D76AE390079A5F1 /* ContinueButtonDisabled.png */; };
+		4EF2ECE31D76B0140079A5F1 /* TextButtonHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF2ECE11D76B0140079A5F1 /* TextButtonHighlighted.png */; };
+		4EF2ECE41D76B0140079A5F1 /* TextButtonNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF2ECE21D76B0140079A5F1 /* TextButtonNormal.png */; };
+		4EF2ECE71D76B52F0079A5F1 /* DisabledButtonSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4EF2ECE51D76B52F0079A5F1 /* DisabledButtonSound.mp3 */; };
+		4EF2ECE81D76B52F0079A5F1 /* NormalButtonSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4EF2ECE61D76B52F0079A5F1 /* NormalButtonSound.mp3 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4E4002EE1D766ED2009BC88E /* JKButtonNode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JKButtonNode.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E4002F11D766ED2009BC88E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4E4002F51D766ED2009BC88E /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		4E4002F71D766ED2009BC88E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		4E4002FA1D766ED2009BC88E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4E4002FC1D766ED2009BC88E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4E4002FF1D766ED2009BC88E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4E4003011D766ED2009BC88E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E5F179D1D76BF9B0031FFC1 /* MusicButtonOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MusicButtonOff.png; path = Resources/MusicButtonOff.png; sourceTree = "<group>"; };
+		4E5F179E1D76BF9B0031FFC1 /* MusicButtonOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MusicButtonOn.png; path = Resources/MusicButtonOn.png; sourceTree = "<group>"; };
+		4EF2ECD11D768F840079A5F1 /* JKButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JKButtonNode.swift; sourceTree = "<group>"; };
+		4EF2ECD41D769D420079A5F1 /* PlayButtonHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PlayButtonHighlighted.png; path = Resources/PlayButtonHighlighted.png; sourceTree = "<group>"; };
+		4EF2ECD51D769D420079A5F1 /* PlayButtonNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PlayButtonNormal.png; path = Resources/PlayButtonNormal.png; sourceTree = "<group>"; };
+		4EF2ECDF1D76AE390079A5F1 /* ContinueButtonDisabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ContinueButtonDisabled.png; path = Resources/ContinueButtonDisabled.png; sourceTree = "<group>"; };
+		4EF2ECE11D76B0140079A5F1 /* TextButtonHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TextButtonHighlighted.png; path = Resources/TextButtonHighlighted.png; sourceTree = "<group>"; };
+		4EF2ECE21D76B0140079A5F1 /* TextButtonNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TextButtonNormal.png; path = Resources/TextButtonNormal.png; sourceTree = "<group>"; };
+		4EF2ECE51D76B52F0079A5F1 /* DisabledButtonSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = DisabledButtonSound.mp3; path = Resources/Audio/DisabledButtonSound.mp3; sourceTree = "<group>"; };
+		4EF2ECE61D76B52F0079A5F1 /* NormalButtonSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = NormalButtonSound.mp3; path = Resources/Audio/NormalButtonSound.mp3; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4E4002EB1D766ED2009BC88E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4E4002E51D766ED2009BC88E = {
+			isa = PBXGroup;
+			children = (
+				4E4002F01D766ED2009BC88E /* JKButtonNode */,
+				4E4002EF1D766ED2009BC88E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4E4002EF1D766ED2009BC88E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4E4002EE1D766ED2009BC88E /* JKButtonNode.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4E4002F01D766ED2009BC88E /* JKButtonNode */ = {
+			isa = PBXGroup;
+			children = (
+				4EF2ECD31D769C210079A5F1 /* Resources */,
+				4EF2ECD11D768F840079A5F1 /* JKButtonNode.swift */,
+				4E4002F51D766ED2009BC88E /* GameScene.swift */,
+				4E4002F71D766ED2009BC88E /* GameViewController.swift */,
+				4E4003071D766EE3009BC88E /* Supporting */,
+			);
+			path = JKButtonNode;
+			sourceTree = "<group>";
+		};
+		4E4003071D766EE3009BC88E /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				4E4002F11D766ED2009BC88E /* AppDelegate.swift */,
+				4E4002F91D766ED2009BC88E /* Main.storyboard */,
+				4E4002FC1D766ED2009BC88E /* Assets.xcassets */,
+				4E4002FE1D766ED2009BC88E /* LaunchScreen.storyboard */,
+				4E4003011D766ED2009BC88E /* Info.plist */,
+			);
+			name = Supporting;
+			sourceTree = "<group>";
+		};
+		4EF2ECD31D769C210079A5F1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4E5F179D1D76BF9B0031FFC1 /* MusicButtonOff.png */,
+				4E5F179E1D76BF9B0031FFC1 /* MusicButtonOn.png */,
+				4EF2ECD81D769F080079A5F1 /* Sounds */,
+				4EF2ECE11D76B0140079A5F1 /* TextButtonHighlighted.png */,
+				4EF2ECE21D76B0140079A5F1 /* TextButtonNormal.png */,
+				4EF2ECDF1D76AE390079A5F1 /* ContinueButtonDisabled.png */,
+				4EF2ECD41D769D420079A5F1 /* PlayButtonHighlighted.png */,
+				4EF2ECD51D769D420079A5F1 /* PlayButtonNormal.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		4EF2ECD81D769F080079A5F1 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				4EF2ECE51D76B52F0079A5F1 /* DisabledButtonSound.mp3 */,
+				4EF2ECE61D76B52F0079A5F1 /* NormalButtonSound.mp3 */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4E4002ED1D766ED2009BC88E /* JKButtonNode */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E4003041D766ED2009BC88E /* Build configuration list for PBXNativeTarget "JKButtonNode" */;
+			buildPhases = (
+				4E4002EA1D766ED2009BC88E /* Sources */,
+				4E4002EB1D766ED2009BC88E /* Frameworks */,
+				4E4002EC1D766ED2009BC88E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JKButtonNode;
+			productName = JKButtonNode;
+			productReference = 4E4002EE1D766ED2009BC88E /* JKButtonNode.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4E4002E61D766ED2009BC88E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Jozemite Apps";
+				TargetAttributes = {
+					4E4002ED1D766ED2009BC88E = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 4E4002E91D766ED2009BC88E /* Build configuration list for PBXProject "JKButtonNode" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4E4002E51D766ED2009BC88E;
+			productRefGroup = 4E4002EF1D766ED2009BC88E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4E4002ED1D766ED2009BC88E /* JKButtonNode */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4E4002EC1D766ED2009BC88E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E4003001D766ED2009BC88E /* LaunchScreen.storyboard in Resources */,
+				4E5F179F1D76BF9B0031FFC1 /* MusicButtonOff.png in Resources */,
+				4E5F17A01D76BF9B0031FFC1 /* MusicButtonOn.png in Resources */,
+				4EF2ECE81D76B52F0079A5F1 /* NormalButtonSound.mp3 in Resources */,
+				4E4002FD1D766ED2009BC88E /* Assets.xcassets in Resources */,
+				4EF2ECE41D76B0140079A5F1 /* TextButtonNormal.png in Resources */,
+				4EF2ECE71D76B52F0079A5F1 /* DisabledButtonSound.mp3 in Resources */,
+				4EF2ECD71D769D420079A5F1 /* PlayButtonNormal.png in Resources */,
+				4E4002FB1D766ED2009BC88E /* Main.storyboard in Resources */,
+				4EF2ECD61D769D420079A5F1 /* PlayButtonHighlighted.png in Resources */,
+				4EF2ECE01D76AE390079A5F1 /* ContinueButtonDisabled.png in Resources */,
+				4EF2ECE31D76B0140079A5F1 /* TextButtonHighlighted.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4E4002EA1D766ED2009BC88E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EF2ECD21D768F840079A5F1 /* JKButtonNode.swift in Sources */,
+				4E4002F61D766ED2009BC88E /* GameScene.swift in Sources */,
+				4E4002F81D766ED2009BC88E /* GameViewController.swift in Sources */,
+				4E4002F21D766ED2009BC88E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4E4002F91D766ED2009BC88E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E4002FA1D766ED2009BC88E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4E4002FE1D766ED2009BC88E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E4002FF1D766ED2009BC88E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4E4003021D766ED2009BC88E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4E4003031D766ED2009BC88E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4E4003051D766ED2009BC88E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JKButtonNode/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JozemiteApps.JKButtonNode;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4E4003061D766ED2009BC88E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JKButtonNode/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JozemiteApps.JKButtonNode;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4E4002E91D766ED2009BC88E /* Build configuration list for PBXProject "JKButtonNode" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E4003021D766ED2009BC88E /* Debug */,
+				4E4003031D766ED2009BC88E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4E4003041D766ED2009BC88E /* Build configuration list for PBXNativeTarget "JKButtonNode" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E4003051D766ED2009BC88E /* Debug */,
+				4E4003061D766ED2009BC88E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4E4002E61D766ED2009BC88E /* Project object */;
+}
