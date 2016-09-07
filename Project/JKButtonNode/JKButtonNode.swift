@@ -22,7 +22,8 @@
 
 /*  The JKButtonNode class is a very easy class used to display buttons in a SpriteKit game.
  *  The class uses an SKLabelNode on top of an SKTexture, which makes it easier for users to
- *  manipulate the buttons since they utilize all of the SKLabelNode and SKTexture properties.
+ *  manipulate the buttons since they utilize all of the SKLabelNode and SKTexture properties
+ *  that they are familiar with already.
  */
 
 import SpriteKit
@@ -106,21 +107,21 @@ class JKButtonNode: SKSpriteNode {
     //----------------------
     /**Initializes a new button with just a background and no title.
        You can declare the button's action later if you choose not to at initialization.*/
-    init(background: SKTexture, action: ((button: JKButtonNode) -> Void)? = nil) {
+    init(backgroundNamed name: String, action: ((button: JKButtonNode) -> Void)? = nil) {
         self.title = SKLabelNode(text: "")
         self.action = action
-        super.init(texture: background, color: UIColor.clearColor(), size: background.size())
-        finalizeInit(state: .normal, background: background)
+        super.init(texture: SKTexture(imageNamed: name), color: UIColor.clearColor(), size: SKTexture(imageNamed: name).size())
+        finalizeInit(state: .normal, background: SKTexture(imageNamed: name))
     }
     
     /**Initializes a new button with a specific background for the specified state.
        You can declare the button's action later if you choose not to at initialization.*/
-    init(background: SKTexture, state: JKButtonState, action: ((button: JKButtonNode) -> Void)? = nil) {
+    init(backgroundNamed name: String, state: JKButtonState, action: ((button: JKButtonNode) -> Void)? = nil) {
         self.title = SKLabelNode(text: "")
         self.action = action
         self.state = state
-        super.init(texture: background, color: UIColor.clearColor(), size: background.size())
-        finalizeInit(state: state, background: background)
+        super.init(texture: SKTexture(imageNamed: name), color: UIColor.clearColor(), size: SKTexture(imageNamed: name).size())
+        finalizeInit(state: state, background: SKTexture(imageNamed: name))
     }
     
     /**Initializes a new button with a title and specified state.
@@ -141,7 +142,7 @@ class JKButtonNode: SKSpriteNode {
         finalizeInit(state: .normal, background: background)
     }
     
-    /** Initializes a new button with specific properties.*/
+    /**Initializes a new button with specific properties.*/
     init(title: String, background: SKTexture, state: JKButtonState, action: ((button: JKButtonNode) -> Void)? = nil) {
         self.title = SKLabelNode(text: title)
         self.action = action
@@ -164,11 +165,12 @@ class JKButtonNode: SKSpriteNode {
         } else {
             setState(state)
         }
-        if let title = self.title {
-            assignTitleProperties()
-            title.zPosition = 10
-            addChild(title)
-        }
+        
+        guard let title = self.title else { return }
+        assignTitleProperties()
+        title.zPosition = 10
+        addChild(title)
+        
         userInteractionEnabled = true
     }
     
@@ -179,7 +181,7 @@ class JKButtonNode: SKSpriteNode {
         title.fontSize = size
 
         //This equation is used to center the label vertically when the font size is changed
-        title.position = CGPoint(x: 0, y: 0 - (self.title.fontSize * 0.4))
+        title.position = centerTitlePosition()
     }
     
     //Set the current state of the button with the specified background.
@@ -201,11 +203,13 @@ class JKButtonNode: SKSpriteNode {
     
     //Check to make sure that the sounds have been set before trying to play any.
     private func play(sound: String) {
-        if sound.isEmpty {
-            print("Failed to play button sound because it has not been set.")
-        } else {
-            runAction(SKAction.playSoundFileNamed(sound, waitForCompletion: false))
-        }
+        sound.isEmpty ? print("Failed to play button sound because it has not been set.")
+            : runAction(SKAction.playSoundFileNamed(sound, waitForCompletion: false))
+    }
+    
+    //Centers the title to the button
+    private func centerTitlePosition() -> CGPoint {
+        return CGPoint(x: 0, y: 0 - (self.title.fontSize * 0.4))
     }
     
     
@@ -243,7 +247,7 @@ class JKButtonNode: SKSpriteNode {
         title.fontSize = size
         
         //This equation is used to center the label vertically into the background when the font size is changed
-        title.position = CGPoint(x: 0, y: 0 - (self.title.fontSize * 0.4))
+        title.position = centerTitlePosition()
     }
     
     /**Set the current state of the button. This will also apply the appropriate background.*/
@@ -270,47 +274,38 @@ class JKButtonNode: SKSpriteNode {
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        if enabled {
-            if canChangeState {
-                setState(.highlighted)
-            }
+        guard !enabled else {
+            if canChangeState { setState(.highlighted) }
+            
+            guard let touch = touches.first else { return }
+            let userTouch = touch.locationInNode(parent!)
             
             //Cancels the touch if the user moved their finger out of the button's frame
-            if let touch = touches.first {
-                let location = touch.locationInNode(parent!)
-                if !self.containsPoint(location) {
-                    setState(.normal)
-                    userInteractionEnabled = false
-                    userInteractionEnabled = true
-                }
-            }
+            guard !self.containsPoint(userTouch) else { return }
+            setState(.normal)
+            userInteractionEnabled = false
+            userInteractionEnabled = true
+            return
         }
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        if enabled {
-            setState(.normal)
+        guard !enabled else {
+            if canChangeState { setState(.normal) }
             
             //Allows the action to be complete only if they let go of the button
-            if userInteractionEnabled {
-                if let buttonAction = action {
-                    if let touch = touches.first {
-                        let location = touch.locationInNode(parent!)
-                        if self.containsPoint(location) {
-                            if canPlaySounds {
-                                play(normalSound)
-                            }
-                            buttonAction(button: self)
-                        }
-                    }
-                }
-            }
+            guard userInteractionEnabled, let buttonAction = action, let touch = touches.first else { return }
+            let userTouch = touch.locationInNode(parent!)
+            
+            guard self.containsPoint(userTouch) else { return }
+            if canPlaySounds { play(normalSound) }
+            buttonAction(button: self)
+            return
         }
     }
 
     override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
-        if enabled {
-            setState(.normal)
-        }
+        guard enabled else { return }
+        setState(.normal)
     }
 }

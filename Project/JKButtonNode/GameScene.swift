@@ -12,7 +12,7 @@ import GameplayKit
 class GameScene: SKScene {
     
     //Button declaration with just a background
-    let playButton = JKButtonNode(background: SKTexture(imageNamed: "PlayButtonNormal"))
+    let playButton = JKButtonNode(backgroundNamed: "PlayButtonNormal")
     
     //Button that will be initialized later
     var continueButton: JKButtonNode!
@@ -64,19 +64,19 @@ class GameScene: SKScene {
         let playableHeight = size.width / maxAspectRatio
         let playableMargin = (size.height - playableHeight) / 2.0
         playableArea = CGRect(x:0, y: playableMargin, width: size.width, height: playableHeight)
-        backgroundColor = UIColor.grayColor()
+        backgroundColor = UIColor.blackColor()
         
         //The play button
         playButton.setBackgroundsForState(normal: "PlayButtonNormal", highlighted: "PlayButtonHighlighted", disabled: "")
         playButton.position = CGPoint(x: playableArea.midX - 200, y: playableArea.midY)
         playButton.action = playButtonAction
         playButton.normalSound = "NormalButtonSound"
-        playButton.setSoundsFor(normalButton: "PushedSound", andDisabledButton: "DisabledSound")
+        playButton.setSoundsFor(normalButton: "NormalButtonSound", andDisabledButton: "DisabledButtonSound")
         addChild(playButton)
         
         
         //The continue button initialized
-        continueButton = JKButtonNode(background: SKTexture(imageNamed: "ContinueButtonDisabled"), state: .disabled, action: continueButtonAction)
+        continueButton = JKButtonNode(backgroundNamed: "ContinueButtonDisabled", state: .disabled, action: continueButtonAction)
         continueButton.position = CGPoint(x: playableArea.midX + 200, y: playableArea.midY)
         continueButton.disabledSound = "DisabledButtonSound"
         addChild(continueButton)
@@ -90,8 +90,8 @@ class GameScene: SKScene {
         addChild(textButton)
         
         //The music button
-        musicButton = JKButtonNode(background: SKTexture(imageNamed: "MusicButtonOn"), action: musicButtonAction)
-        musicButton.setProperties(enabled: true, canPlaySound: false, canChangeState: false, withSounds: (active: "", inactive: ""))
+        musicButton = JKButtonNode(backgroundNamed: "MusicButtonOn", action: musicButtonAction)
+        musicButton.setProperties(enabled: true, canPlaySound: false, canChangeState: false, withSounds: (normal: "", disabled: ""))
         musicButton.position = CGPoint(x: playableArea.minX + (musicButton.size.width * 1.2), y: playableArea.maxY - (musicButton.size.height * 1.2))
         addChild(musicButton)
         
