@@ -9,8 +9,8 @@
 import UIKit
 import SpriteKit
 
-var deviceWidth = UIScreen.mainScreen().bounds.width
-var deviceHeight = UIScreen.mainScreen().bounds.height
+var deviceWidth = UIScreen.main.bounds.width
+var deviceHeight = UIScreen.main.bounds.height
 var playableArea: CGRect!
 
 class GameViewController: UIViewController {
@@ -28,7 +28,7 @@ class GameViewController: UIViewController {
         skView.ignoresSiblingOrder = true
         
         /* Set the scale mode to scale to fit the window */
-        scene.scaleMode = .AspectFill
+        scene.scaleMode = .aspectFill
         
         skView.presentScene(scene)
     }

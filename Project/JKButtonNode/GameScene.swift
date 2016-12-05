@@ -26,6 +26,7 @@ class GameScene: SKScene {
     
     var newGameButton = JKButtonNode(title: "New Game", state: .normal)
     
+    
     override init(size: CGSize) {
         super.init(size: size)
     }
@@ -35,36 +36,36 @@ class GameScene: SKScene {
     
     
     //Called when the play button is pressed.
-    func playButtonAction(button: JKButtonNode) {
+    func playButtonAction(_ button: JKButtonNode) {
         print("The play button has been pressed.")
     }
     
     //Called when the continue button is pressed.
-    func continueButtonAction(button: JKButtonNode) {
+    func continueButtonAction(_ button: JKButtonNode) {
         //Will not be called because the button is disabled.
         print("The continue button has been pressed.")
     }
     
     //Called when the text button is pressed.
-    func textButtonAction(button: JKButtonNode) {
+    func textButtonAction(_ button: JKButtonNode) {
         var words = ["I'm a button.", "Press me!", "Press me again!", "Hello World!", "Enter text.", "Hi!"]
-        words = GKRandomSource.sharedRandom().arrayByShufflingObjectsInArray(words) as! [String]
+        words = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: words) as! [String]
         textButton.title.text = words[0]
     }
     
     //Called when the music button is pressed.
-    func musicButtonAction(button: JKButtonNode) {
+    func musicButtonAction(_ button: JKButtonNode) {
         isMusicOn = !isMusicOn
         isMusicOn ? (musicButton.texture = SKTexture(imageNamed: "MusicButtonOn")) : (musicButton.texture = SKTexture(imageNamed: "MusicButtonOff"))
     }
     
     
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         let maxAspectRatio: CGFloat = deviceWidth / deviceHeight
         let playableHeight = size.width / maxAspectRatio
         let playableMargin = (size.height - playableHeight) / 2.0
         playableArea = CGRect(x:0, y: playableMargin, width: size.width, height: playableHeight)
-        backgroundColor = UIColor.blackColor()
+        backgroundColor = UIColor.black
         
         //The play button
         playButton.setBackgroundsForState(normal: "PlayButtonNormal", highlighted: "PlayButtonHighlighted", disabled: "")
