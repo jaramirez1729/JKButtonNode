@@ -178,11 +178,7 @@ class JKButtonNode: SKSpriteNode {
     //-------------------------
     //Shared function to be used by initializers only
     fileprivate func finalizeInit(state: JKButtonState, background: SKTexture?) {
-        if let bg = background {
-            setState(state)
-        } else {
-            setState(state)
-        }
+        set(state: state)
         
         guard let title = self.title else { return }
         assignTitleProperties()
@@ -249,11 +245,11 @@ class JKButtonNode: SKSpriteNode {
         self.size = SKTexture(imageNamed: normal).size()
         self.highlightedBG = SKTexture(imageNamed: highlighted)
         self.disabledBG = SKTexture(imageNamed: disabled)
-        setState(self.state)
+        set(state: self.state)
     }
     
     /**Set the sounds to play when button has been pressed or when it can't be pressed.*/
-    func setSoundsFor(normalButton: String, andDisabledButton disabledButton: String) {
+    func setSounds(normalButton: String, andDisabledButton disabledButton: String) {
         self.normalSound = normalButton
         self.disabledSound = disabledButton
     }
@@ -269,7 +265,7 @@ class JKButtonNode: SKSpriteNode {
     }
     
     /**Set the current state of the button. This will also apply the appropriate background.*/
-    func setState(_ state: JKButtonState) {
+    func set(state: JKButtonState) {
         switch state {
         case .normal: self.texture = normalBG
         case .highlighted: self.texture = highlightedBG
@@ -284,7 +280,7 @@ class JKButtonNode: SKSpriteNode {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if enabled {
             if canChangeState {
-                setState(.highlighted)
+                set(state: .highlighted)
             }
         } else if canPlaySounds {
             play(disabledSound)
@@ -293,14 +289,14 @@ class JKButtonNode: SKSpriteNode {
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard !enabled else {
-            if canChangeState { setState(.highlighted) }
+            if canChangeState { set(state: .highlighted) }
             
             guard let touch = touches.first else { return }
             let userTouch = touch.location(in: parent!)
             
             //Cancels the touch if the user moved their finger out of the button's frame
             guard !self.contains(userTouch) else { return }
-            setState(.normal)
+            set(state: .normal)
             isUserInteractionEnabled = false
             isUserInteractionEnabled = true
             return
@@ -309,7 +305,7 @@ class JKButtonNode: SKSpriteNode {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard !enabled else {
-            if canChangeState { setState(.normal) }
+            if canChangeState { set(state: .normal) }
             
             //Allows the action to be complete only if they let go of the button
             guard isUserInteractionEnabled, let buttonAction = action, let touch = touches.first else { return }
@@ -324,6 +320,6 @@ class JKButtonNode: SKSpriteNode {
 
     override func touchesCancelled(_ touches: Set<UITouch>?, with event: UIEvent?) {
         guard enabled else { return }
-        setState(.normal)
+        set(state: .normal)
     }
 }
