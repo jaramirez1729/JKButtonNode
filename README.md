@@ -1,5 +1,4 @@
 # JKButtonNode: Buttons for SpriteKit
-## Swift 2.3 (Will Update to Swift 3 Soon!)
 
 ## Preface
 
