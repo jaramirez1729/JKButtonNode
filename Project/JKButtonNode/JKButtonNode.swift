@@ -86,7 +86,7 @@ class JKButtonNode: SKSpriteNode {
     var action:((_ sender: JKButtonNode) -> Void)?
     
     //The state of the button only accessed by the class.
-    fileprivate var state: JKButtonState = .normal
+    private var state: JKButtonState = .normal
     
     /**The string that the button displays.*/
     var title: SKLabelNode!
