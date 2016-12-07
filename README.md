@@ -42,7 +42,7 @@ var newGameButton = JKButtonNode(title: "New Game", state: .normal)
 The action is the function that is called when the user has successfully pushed the button and released their touch. The action will not be called if the user touches the button but then moves their finger off the button's frame. First, declare a function with whatever name you want but make sure its parameters are the same as: **button: JKButtonNode**.
 
 ````
-func newGameAction(button: JKButtonNode) {
+func newGameAction(_ sender: JKButtonNode) {
   //This is called when the button has been pressed.
 }
 ````
@@ -62,7 +62,7 @@ newGameButton.setBackgroundsForState(normal: "ButtonNormal", HomeButtonNormal: "
 ````
 **setSoundsFor**: Call this method to specify what sounds to play when the user pushes the button successfully or when they attempt to push a button that's disabled. You can also disable sounds by calling **canPlaySounds** and setting it to false. Alternatively, you can set each one specific by calling the **normalSound** and **disabledSound** properties.
 ````
-newGameButton.setSoundsFor(normalButton: "PushedSound", andDisabledButton: "DisabledSound")
+newGameButton.setSounds(normalButton: "PushedSound", andDisabledButton: "DisabledSound")
 ````
 **setPropertiesForTitle**: If your button has a title, then simply call this function to change the title properties, such as the font size, color, and font.
 ````
