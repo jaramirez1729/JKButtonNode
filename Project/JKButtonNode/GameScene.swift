@@ -36,25 +36,25 @@ class GameScene: SKScene {
     
     
     //Called when the play button is pressed.
-    func playButtonAction(_ button: JKButtonNode) {
+    func playButtonAction(_ sender: JKButtonNode) {
         print("The play button has been pressed.")
     }
     
     //Called when the continue button is pressed.
-    func continueButtonAction(_ button: JKButtonNode) {
+    func continueButtonAction(_ sender: JKButtonNode) {
         //Will not be called because the button is disabled.
         print("The continue button has been pressed.")
     }
     
     //Called when the text button is pressed.
-    func textButtonAction(_ button: JKButtonNode) {
+    func textButtonAction(_ sender: JKButtonNode) {
         var words = ["I'm a button.", "Press me!", "Press me again!", "Hello World!", "Enter text.", "Hi!"]
         words = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: words) as! [String]
         textButton.title.text = words[0]
     }
     
     //Called when the music button is pressed.
-    func musicButtonAction(_ button: JKButtonNode) {
+    func musicButtonAction(_ sender: JKButtonNode) {
         isMusicOn = !isMusicOn
         isMusicOn ? (musicButton.texture = SKTexture(imageNamed: "MusicButtonOn")) : (musicButton.texture = SKTexture(imageNamed: "MusicButtonOff"))
     }
@@ -72,7 +72,7 @@ class GameScene: SKScene {
         playButton.position = CGPoint(x: playableArea.midX - 200, y: playableArea.midY)
         playButton.action = playButtonAction
         playButton.normalSound = "NormalButtonSound"
-        playButton.setSoundsFor(normalButton: "NormalButtonSound", andDisabledButton: "DisabledButtonSound")
+        playButton.setSounds(normalButton: "NormalButtonSound", andDisabledButton: "DisabledButtonSound")
         addChild(playButton)
         
         
@@ -86,7 +86,7 @@ class GameScene: SKScene {
         textButton.setBackgroundsForState(normal: "TextButtonNormal", highlighted: "TextButtonHighlighted", disabled: "")
         textButton.position = CGPoint(x: playableArea.midX, y: playableArea.midY - 240)
         textButton.title.text = "PUSH HERE" //Because the title is an SKLabelNode, you can access all the properties of an SKLabelNode.
-        textButton.setSoundsFor(normalButton: "NormalButtonSound", andDisabledButton: "DisabledButtonSound")
+        textButton.setSounds(normalButton: "NormalButtonSound", andDisabledButton: "DisabledButtonSound")
         textButton.action = textButtonAction
         addChild(textButton)
         
