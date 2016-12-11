@@ -2,7 +2,7 @@
 
 ## Preface
 
-The JKButtonNode class is a custom class built by me that introduces buttons into SpriteKit games. If you have ever worked on one, you will see that SpriteKit does not have its own built in button nodes. Instead, what many people do, is they create a regular sprite and then just call containsPoint on the sprite to detect when the user has pressed it. This class solves that issue and implements a similar system used by UIButton node to prevent extra and unnecessary code.
+The JKButtonNode class is a custom class that introduces buttons into SpriteKit games. If you have ever worked on one, you will see that SpriteKit does not have its own built in button nodes. Instead, what many people do, is they create a regular sprite and then just call containsPoint on the sprite to detect when the user has pressed it. This class solves that issue and implements a similar system used by UIButton node to prevent extra and unnecessary code.
 
 This screenshot is from the quiz game mode of my Chomp'd game. Notice the 4 buttons to the left. They are all JKButtonNodes with titles. Because it's a quiz, the titles must change with each new question. I'm only using 4 objects as opposed to having 8 if I didn't use my JKButtonNode class.
   ![QuizButtons](Screenshots/QuizButtons.png)
