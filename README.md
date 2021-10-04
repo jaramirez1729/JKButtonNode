@@ -1,5 +1,7 @@
 # JKButtonNode: Buttons for SpriteKit
 
+## This repo is no longer supported.
+
 ## Preface
 
 The JKButtonNode class is a custom class that introduces buttons into SpriteKit games. If you have ever worked on one, you will see that SpriteKit does not have its own built in button nodes. Instead, what many people do, is they create a regular sprite and then just call containsPoint on the sprite to detect when the user has pressed it. This class solves that issue and implements a similar system used by UIButton node to prevent extra and unnecessary code.
