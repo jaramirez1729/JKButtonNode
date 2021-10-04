@@ -77,6 +77,5 @@ newGameButton.title.fontColor = UIColor.redColor()
 ````
 button1.setProperties(enabled: true, canPlaySound: true, canChangeState: false, withSounds: (normal: "NormalSound", disabled: "DisabledSound"))
 ````
-### Additional Notes
-If you need help, just look at the code from the project on how you can create various buttons with unique properties or email me at [jozemite@gmail.com](jozemite@gmail.com). The following is a screenshot of my Chomp'd game that also uses the same button class. Note that the titles of those buttons are not an SKLabelNode. These are examples of buttons without titles.
+These are examples of buttons without titles.
  ![HomeButtons](Screenshots/HomeButtons.png)
